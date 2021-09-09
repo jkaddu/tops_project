@@ -149,7 +149,6 @@ html {
 }
 Label {
   color: white;
-  text-shadow: 0.1rem 0.1rem black;
 }
 
 /* Register */
@@ -163,8 +162,18 @@ Label {
   padding: 150px;
 }
 .register h1 {
-  color: blue;
-  text-shadow: 0.1rem 0.1rem white;
+  color: white;
+}
+.regCard {
+  background-color: black;
+  border-radius: 8px;
+  padding: 3%;
+  width: 35%;
+  height: 300px;
+  margin: 0 auto;
+}
+.form Button {
+  margin-top: 5%;
 }
 
 /* Login Page */
@@ -187,10 +196,7 @@ Label {
   height: 300px;
   margin: 0 auto;
 }
-.loginCard a {
-  color: white;
-  margin-top: 5%;
-}
-.logLabel {
-  color: white;
+.regCard a {
+  color: rgb(255, 204, 204);
+  text-decoration: none;
 }
