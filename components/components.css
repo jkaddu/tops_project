@@ -1,0 +1,261 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+/* Navigation */
+
+.landNav {
+  display: flex;
+  justify-content: space-between;
+  background-color: yellow;
+}
+.landNav h1 {
+  margin: 1% 1%;
+  color: black;
+  font-weight: bolder;
+}
+.landNav p {
+  margin: 1% 1%;
+}
+
+/* Landing Page */
+
+.land {
+  height: 100vh;
+  background: url(../images/samuel-regan-asante-wMkaMXTJjlQ-unsplash.jpg);
+  background-size: cover;
+}
+.landBtn {
+  padding: 2%;
+}
+.landCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: yellow;
+  color: black;
+  height: 30%;
+  width: 35%;
+  border-radius: 8px;
+  padding: 2%;
+  margin: 10% auto;
+}
+.landCard h2 {
+  color: blue;
+  margin-top: 3%;
+  font-weight: bolder;
+}
+.landCard p {
+  padding: 1%;
+}
+
+/* Home Page */
+
+.home {
+  background-image: url(../images/homePic.webp);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+.title {
+  color: yellow;
+  text-shadow: 0.1rem 0.1rem black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: bolder;
+}
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%;
+}
+.movie-card {
+  background-color: white;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  margin: 1% auto;
+  padding: 1%;
+  width: 20%;
+  height: 20%;
+  opacity: 0.9;
+}
+.movie-card h3 {
+  text-align: center;
+}
+.hmbtn {
+  margin-left: 30%;
+}
+.hmbtn2 {
+  margin-left: 5%;
+}
+
+/* AddMovie Page */
+
+.addMovie {
+  background-image: url(../images/homePic.webp);
+  height: 100vh;
+}
+.addCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.title1 {
+  color: yellow;
+  text-shadow: 0.1rem 0.1rem black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 38px;
+  font-weight: bolder;
+}
+.formMovie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+/* Edit Page */
+
+.editPage {
+  background-image: url(../images/homePic.webp);
+  height: 100vh;
+}
+.editForm {
+  width: 25%;
+  margin: 100px auto;
+}
