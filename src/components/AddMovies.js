@@ -29,18 +29,18 @@ class AddMovie extends React.Component {
     return (
       <div className="addMovie">
         <Navbar className="landNav">
-          <h2>Top 3</h2>
-          <Button color="primary" href="/home">Home</Button>
+          <h2>Tops</h2>
+          <Button className='landBtn' color="primary" href="/home">Home</Button>
         </Navbar>
        
         <div className="addCard">
-          <h3 className="title1">Movie</h3>
           <Form className="formMovie" onSubmit={this.handleSubmit}>
             <Col>
               <FormGroup>
                 <Input
                   type="text"
                   name="movie"
+                  placeholder='Name Movie'
                   value={this.state.inputValue}
                   onChange={this.handleChanges}
                   />

@@ -23,8 +23,8 @@ class Edit extends React.Component {
     return (
       <div className="editPage">
       <Navbar className="landNav">
-        <h2>Top 3</h2>
-        <Button color="primary" href="/home">Home</Button>
+        <h2>Tops</h2>
+        <Button className='landBtn' color="primary" href="/home">Home</Button>
       </Navbar>
       
       <div className="addCard">

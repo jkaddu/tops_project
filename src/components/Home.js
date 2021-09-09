@@ -6,8 +6,8 @@ const Home = (props) => {
   return (
     <div className="home">
       <Navbar className="landNav">
-        <h2>Top 3</h2>
-        <Button color="primary" href="/login">Sign Out</Button>
+        <h2>Tops</h2>
+        <Button className='landBtn' color="primary" href="/login">Sign Out</Button>
       </Navbar>
       
       <div className="homePage">
