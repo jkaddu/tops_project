@@ -13,7 +13,7 @@ const Home = (props) => {
       </Navbar>
 
       <div className="homePage">
-        <h2 className="title">Welcome to your dashboard!</h2>
+        <h2 className="title">Welcome to your DASHBOARD!</h2>
         <div className="movieContainer">
           <div className="movie-card">
             <h3>Movies</h3>

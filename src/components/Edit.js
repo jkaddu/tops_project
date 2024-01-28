@@ -30,13 +30,14 @@ class Edit extends React.Component {
         </Navbar>
 
         <div className="editCard">
-          <h3 className="title1">EDIT HERE</h3>
+          <h3 className="title1">MOVIE NAME</h3>
           <Form className="editForm" onSubmit={this.handleSubmit}>
             <Col>
               <FormGroup>
                 <Input
                   type="edit"
                   name="movie"
+                  placeholder="movie name"
                   value={this.state.name}
                   onChange={this.handleChange}
                 />
