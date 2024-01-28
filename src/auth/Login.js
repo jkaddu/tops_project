@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Col, Form, FormGroup, Input, Navbar, Button, Label } from "reactstrap";
-import '../App.css';
+import "../App.css";
 
 class Login extends React.Component {
   state = {
@@ -11,7 +11,6 @@ class Login extends React.Component {
     },
   };
 
-  
   login = (e) => {
     e.preventDefault();
     axios
@@ -23,7 +22,6 @@ class Login extends React.Component {
       .catch((error) => {
         console.log(error);
         alert("Invalid Credentials");
-      
       });
   };
 
@@ -39,13 +37,16 @@ class Login extends React.Component {
   render() {
     return (
       <>
-          <Navbar className="landNav">
-            <h2>Tops</h2>
-            <Button className='landBtn' color="primary" href="/register">Sign Up</Button>
-          </Navbar>
-       
-          <div className="loginCont">
-            <div className="regCard">
+        <Navbar className="landNav">
+          <h2>Tops</h2>
+          <Button className="landBtn" color="primary" href="/register">
+            Sign Up
+          </Button>
+        </Navbar>
+
+        <div className="loginCont">
+          <div className="loginCard">
+            <h2>Login</h2>
             <Form className="form" onSubmit={this.login}>
               <Col>
                 <FormGroup>
@@ -73,12 +74,14 @@ class Login extends React.Component {
               </Col>
 
               <Button color="primary" type="submit">
-                Login
+                LOGIN
               </Button>
             </Form>
-            <a href="/register" className="create">Create an account</a>
-            </div>
+            <a href="/register" className="create">
+              Create an account
+            </a>
           </div>
+        </div>
       </>
     );
   }

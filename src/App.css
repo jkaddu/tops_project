@@ -166,6 +166,7 @@ Label {
 .regCard {
   text-align: center;
   background-color: black;
+  color: white;
   border-radius: 8px;
   padding: 3%;
   width: 35%;
@@ -191,14 +192,15 @@ Label {
   margin: 0 auto;
 }
 .loginCard {
+  text-align: center;
   background-color: black;
+  color: white;
   border-radius: 8px;
   padding: 3%;
   width: 35%;
-  height: 300px;
   margin: 0 auto;
 }
-.regCard a {
-  color: rgb(255, 204, 204);
+.loginCard a {
   text-decoration: none;
+  color: white;
 }

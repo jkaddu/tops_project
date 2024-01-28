@@ -106,7 +106,7 @@ class Signup extends React.Component {
             </Col>
 
             <Button className="btn" color="primary">
-              Submit
+              SUBMIT
             </Button>
           </Form>
         </div>
