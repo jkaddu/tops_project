@@ -157,23 +157,25 @@ Label {
   background-image: url(images/homePic.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-  height: 700px;
-  padding: 150px;
+  height: 100vh;
 }
 .register h1 {
   color: white;
+  text-align: center;
 }
 .regCard {
+  text-align: center;
   background-color: black;
   border-radius: 8px;
   padding: 3%;
   width: 35%;
-  height: 300px;
-  margin: 0 auto;
+  margin: 7% auto;
 }
 .form Button {
-  margin-top: 5%;
+  margin: 5% auto;
+}
+.btn {
+  color: red;
 }
 
 /* Login Page */
