@@ -123,7 +123,7 @@ class App extends React.Component {
             )}
           />
           <Route
-            path="/edit/:id"
+            path="/edit"
             render={(props) => (
               <Edit
                 {...props}

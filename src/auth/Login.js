@@ -46,7 +46,7 @@ class Login extends React.Component {
 
         <div className="loginCont">
           <div className="loginCard">
-            <h2>Login</h2>
+            <h2>TOPS</h2>
             <Form className="form" onSubmit={this.login}>
               <Col>
                 <FormGroup>

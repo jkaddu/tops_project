@@ -5,48 +5,51 @@ class Edit extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: ''
-    }
+      name: "",
+    };
   }
 
   handleChange = (e) => {
     this.setState({
-      name: e.target.value
-    })
-  }
+      name: e.target.value,
+    });
+  };
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     this.props.updateItem();
-  }
+  };
   render() {
     return (
       <div className="editPage">
-      <Navbar className="landNav">
-        <h2>Tops</h2>
-        <Button className='landBtn' color="primary" href="/home">Home</Button>
-      </Navbar>
-      
-      <div className="addCard">
-        <h3 className="title1">Edit Here</h3>
-        <Form className="formMovie" onSubmit={this.handleSubmit}>
-          <Col>
-            <FormGroup>
-              <Input
-                type="edit"
-                name="movie"
-                value={this.state.name}
-                onChange={this.handleChange}
+        <Navbar className="landNav">
+          <h2>Tops</h2>
+          <Button className="landBtn" color="primary" href="/home">
+            Home
+          </Button>
+        </Navbar>
+
+        <div className="editCard">
+          <h3 className="title1">EDIT HERE</h3>
+          <Form className="editForm" onSubmit={this.handleSubmit}>
+            <Col>
+              <FormGroup>
+                <Input
+                  type="edit"
+                  name="movie"
+                  value={this.state.name}
+                  onChange={this.handleChange}
                 />
-            </FormGroup>
-          </Col>
-          <Button color="primary" type="submit">Edit</Button>
-        </Form>
+              </FormGroup>
+            </Col>
+            <Button className="editBtn" color="primary" type="submit">
+              SAVE
+            </Button>
+          </Form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-};
 
 export default Edit;
-
