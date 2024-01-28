@@ -7,22 +7,99 @@ const Home = (props) => {
     <div className="home">
       <Navbar className="landNav">
         <h2>Tops</h2>
-        <Button className='landBtn' color="primary" href="/login">Sign Out</Button>
+        <Button className="landBtn" color="primary" href="/login">
+          Sign Out
+        </Button>
       </Navbar>
-      
+
       <div className="homePage">
-        <Button className="btnAdd" color="primary" href="/movie">Add Movie</Button>    
-        <h3 className="title">Movies</h3>
-        {props.movies && props.movies.map((movie) => {
-            return (
-              <div key={movie.id} className="movie-card">
-                <h3>{movie.name}</h3>
-                {/* <p>{movie.description}</p> */}
-                <Button color="primary" className="hmbtn" href={`/edit/${movie.id}`}>Edit</Button>
-                <Button color="danger" className="hmbtn2" onClick={() => props.delete(movie.id)}>X</Button>
-              </div>
-              );
-            })}
+        <h2 className="title">Welcome to your dashboard!</h2>
+        <div className="movieContainer">
+          <div className="movie-card">
+            <h3>Movies</h3>
+            {props.movies &&
+              props.movies.map((movie) => {
+                return (
+                  <div key={movie.id}>
+                    <h3>{movie.name}</h3>
+                    <div className="edit-delete">
+                      {/* <p>{movie.description}</p> */}
+                      <Button
+                        color="primary"
+                        className="hmbtn"
+                        href={`/edit/${movie.id}`}
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        color="danger"
+                        className="hmbtn2"
+                        onClick={() => props.delete(movie.id)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+          <div className="movie-card">
+            <h3>Movies</h3>
+            {props.movies &&
+              props.movies.map((movie) => {
+                return (
+                  <div key={movie.id}>
+                    <h3>{movie.name}</h3>
+                    <div className="edit-delete">
+                      {/* <p>{movie.description}</p> */}
+                      <Button
+                        color="primary"
+                        className="hmbtn"
+                        href={`/edit/${movie.id}`}
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        color="danger"
+                        className="hmbtn2"
+                        onClick={() => props.delete(movie.id)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+          <div className="movie-card">
+            <h3>Movies</h3>
+            {props.movies &&
+              props.movies.map((movie) => {
+                return (
+                  <div key={movie.id}>
+                    <h3>{movie.name}</h3>
+                    <div className="edit-delete">
+                      {/* <p>{movie.description}</p> */}
+                      <Button
+                        color="primary"
+                        className="hmbtn"
+                        href={`/edit/${movie.id}`}
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        color="danger"
+                        className="hmbtn2"
+                        onClick={() => props.delete(movie.id)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
       </div>
     </div>
   );

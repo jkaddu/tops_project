@@ -193,6 +193,11 @@ table {
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100vh;
+}
+.movieContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .title {
   color: yellow;
@@ -200,22 +205,18 @@ table {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 45px;
   font-weight: bolder;
+  text-align: center;
+  margin-bottom: 3%;
 }
-.homePage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1%;
-}
+
 .movie-card {
   background-color: white;
   border: 2px solid yellow;
   border-radius: 5px;
   margin: 1% auto;
   padding: 1%;
-  width: 20%;
-  height: 20%;
-  opacity: 0.9;
+  width: 300px;
+  height: 500px;
 }
 .movie-card h3 {
   text-align: center;
@@ -226,9 +227,10 @@ table {
 .hmbtn2 {
   margin-left: 5%;
 }
-footer {
-  background-color: black;
-  color: white;
+.edit-delete {
+  display: flex;
+  margin-right: 10%;
+  /* background-color: red; */
 }
 
 /* AddMovie Page */
