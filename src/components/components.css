@@ -140,14 +140,16 @@ table {
 }
 .landNav h2 {
   margin-left: 2%;
-  color: dodgerblue;
+  color: blue;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 .landNav p {
   margin: 1% 1%;
 }
 .landBtn {
   margin-right: 2%;
+  text-transform: uppercase;
 }
 
 /* Landing Page */
@@ -162,7 +164,6 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   background-color: yellow;
   color: black;
   height: 30%;
@@ -175,12 +176,15 @@ table {
   color: blue;
   margin-top: 3%;
   font-weight: bolder;
+  text-transform: uppercase;
 }
 .landCard p {
   padding: 1%;
   font-weight: bold;
 }
-
+.register-button {
+  text-transform: uppercase;
+}
 /* Home Page */
 
 .home {

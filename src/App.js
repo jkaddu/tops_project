@@ -19,9 +19,9 @@ class App extends React.Component {
       movies: [
         {
           id: 1,
-          name: ''
-        }
-      ]
+          name: "",
+        },
+      ],
     };
   }
 
@@ -44,15 +44,15 @@ class App extends React.Component {
   addMovie = (movie) => {
     // created an authorization component with headers/baseURL that is passed into axiosWithAuth()
     axiosWithAuth()
-      .post()
+      .post(movie)
       .then(() => {
         const movieName = {
           id: Date.now(),
-          name: movie.name
-        }
-        const newMovie = [...this.state.movies, movieName]
+          name: movie.name,
+        };
+        const newMovie = [...this.state.movies, movieName];
         this.setState({
-         movies: newMovie
+          movies: newMovie,
         });
         window.location.href = "/home";
       })
@@ -62,13 +62,13 @@ class App extends React.Component {
   updateMovie = (e, id, updatedMovie) => {
     e.preventDefault();
     const endpoint = `https://top9-the2nd.herokuapp.com/api/movies/${id}`;
-    
+
     axios
       .put(endpoint, updatedMovie, {
         headers: { Authorization: localStorage.getItem("token") },
       })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         window.location.href = "/home";
       })
       .catch((error) => {
@@ -84,7 +84,7 @@ class App extends React.Component {
       })
       .then((response) => {
         const movie = response.data;
-        this.setState({ movie }); 
+        this.setState({ movie });
         window.location.href = "/home";
       })
       .catch((error) => {
@@ -105,9 +105,34 @@ class App extends React.Component {
           <Route exact path="/" component={Land} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/home" render={(props) => (<Home {...props} mount={this.componentDidMount} movies={this.state.movies} delete={this.deleteMovie} /> )} />
-          <Route path="/movie"render={(props) => ( <AddMovies {...props} addMovie={this.addMovie} /> )} />
-          <Route path="/edit/:id" render={(props) => ( <Edit {...props} movies={this.state.movies} updateMovie={this.updateMovie} value={this.state.name} /> )} />
+          <Route
+            path="/home"
+            render={(props) => (
+              <Home
+                {...props}
+                mount={this.componentDidMount}
+                movies={this.state.movies}
+                delete={this.deleteMovie}
+              />
+            )}
+          />
+          <Route
+            path="/movie"
+            render={(props) => (
+              <AddMovies {...props} addMovie={this.addMovie} />
+            )}
+          />
+          <Route
+            path="/edit/:id"
+            render={(props) => (
+              <Edit
+                {...props}
+                movies={this.state.movies}
+                updateMovie={this.updateMovie}
+                value={this.state.name}
+              />
+            )}
+          />
         </Router>
       </div>
     );
