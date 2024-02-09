@@ -204,3 +204,6 @@ Label {
   text-decoration: none;
   color: white;
 }
+.create:hover {
+  color: #228be6;
+}
