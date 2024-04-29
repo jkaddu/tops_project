@@ -1,155 +1,45 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* - FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
 }
 /* Navigation */
 
 .landNav {
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
+  align-items: center;
+  background-color: #0d98de;
+  padding: 1rem 2rem;
 }
-.landNav h2 {
-  margin-left: 2%;
-  color: blue;
-  font-weight: bolder;
+.navIcon {
+  stroke: #fff;
+  height: 4rem;
+  width: 4rem;
+}
+.navBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #ff5a60;
   text-transform: uppercase;
+  box-shadow: none;
 }
-.landNav p {
-  margin: 1% 1%;
-}
-.landBtn {
-  margin-right: 2%;
-  text-transform: uppercase;
+.navBtn a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Landing Page */
@@ -164,22 +54,25 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
-  color: black;
-  height: 30%;
-  width: 35%;
+  background-color: rgba(13, 152, 222, 0.9);
+  color: #fff;
+  height: 25rem;
+  width: 40rem;
   border-radius: 8px;
-  padding: 2%;
-  margin: 10% auto;
+  padding: 2rem 4rem;
+  margin: 15rem auto;
 }
 .landCard h2 {
-  color: blue;
-  margin-top: 3%;
-  font-weight: bolder;
+  font-size: 3.2rem;
+  color: #fff;
+  font-weight: bold;
   text-transform: uppercase;
+  margin-top: 1.5rem;
 }
 .landCard p {
-  padding: 1%;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
   font-weight: bold;
 }
 .register-button {
@@ -212,12 +105,12 @@ table {
 
 .movie-card {
   background-color: white;
-  border: 2px solid yellow;
+  border: 2px solid #0d98de;
   border-radius: 5px;
   margin: 1% auto;
   padding: 1%;
-  width: 300px;
-  height: 500px;
+  width: 30rem;
+  height: 50rem;
 }
 .movie-card h3 {
   text-align: center;
@@ -265,12 +158,10 @@ table {
   height: 100vh;
 }
 .title1 {
-  color: white;
-  text-shadow: 0.1rem 0.1rem black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  color: #fff;
+  font-size: 3.2rem;
   font-weight: bolder;
-  margin-bottom: 7%;
+  margin-bottom: 1.2rem;
 }
 .editCard {
   display: flex;
@@ -278,13 +169,16 @@ table {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
   padding: 1%;
-  margin: 10% auto;
-  width: 25%;
-  height: 35%;
+  margin: 15rem auto;
+  height: 20rem;
+  width: 40rem;
 }
-.editBtn {
-  margin-top: 7%;
+.editCard button {
+  margin-top: 1.2rem;
+}
+.editForm {
+  width: 25rem;
 }
