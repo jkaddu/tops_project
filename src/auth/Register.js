@@ -63,7 +63,7 @@ const Register = () => {
         withCredentials: true,
       });
       console.log(response);
-
+      // window.location.href = "/login";
       setSuccess(true);
       // clears state and input fields
       setUser("");

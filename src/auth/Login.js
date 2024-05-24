@@ -82,7 +82,7 @@ const Login = () => {
             <h1>Success!</h1>
             <p className="line">
               <span>
-                <a href="/login">Sign In</a>
+                <a href="/login">You Signed In</a>
               </span>
             </p>
           </section>
