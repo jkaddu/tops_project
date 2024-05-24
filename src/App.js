@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const endpoint = "https://top9-the2nd.herokuapp.com/api/movies";
+    const endpoint = "https://glitch.com/edit/#!/tops-movie-favs/users";
     axios
       .get(endpoint, {
         headers: { authorization: localStorage.getItem("token") },
@@ -61,7 +61,7 @@ class App extends React.Component {
 
   updateMovie = (e, id, updatedMovie) => {
     e.preventDefault();
-    const endpoint = `https://top9-the2nd.herokuapp.com/api/movies/${id}`;
+    const endpoint = `https://glitch.com/edit/#!/tops-movie-favs/users/${id}`;
 
     axios
       .put(endpoint, updatedMovie, {
@@ -77,7 +77,7 @@ class App extends React.Component {
   };
 
   deleteMovie = (id) => {
-    const endpoint = `https://top9-the2nd.herokuapp.com/api/movies/${id}`;
+    const endpoint = `https://glitch.com/edit/#!/tops-movie-favs/users/${id}`;
     axios
       .delete(endpoint, {
         headers: { Authorization: localStorage.getItem("token") },
@@ -110,7 +110,6 @@ class App extends React.Component {
             render={(props) => (
               <Home
                 {...props}
-                mount={this.componentDidMount}
                 movies={this.state.movies}
                 delete={this.deleteMovie}
               />
