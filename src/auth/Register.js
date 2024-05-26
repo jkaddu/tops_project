@@ -26,6 +26,7 @@ const Register = () => {
 
   useEffect(() => {
     userRef.current.focus();
+    // Having an emtpy dependency array means the useEffect runs when the component loads
   }, []);
 
   useEffect(() => {

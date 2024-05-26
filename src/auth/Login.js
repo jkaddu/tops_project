@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect, useContext } from "react";
-// import AuthContext from "./context/AuthProvider";
+import AuthContext from "../context/AuthProvider";
 import axios from "../api/axios";
 import "./auth.css";
 const LOGIN_URL = "/auth";
 
 const Login = () => {
-  // const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -32,6 +32,8 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });
+      const accessToken = response?.data?.accessToken;
+      setAuth({ username: user, password: pwd, accessToken });
       console.log(response);
       console.log(response.data.accessToken);
       setUser("");
