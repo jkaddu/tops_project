@@ -41,57 +41,6 @@ class App extends React.Component {
       });
   }
 
-  addMovie = (movie) => {
-    // created an authorization component with headers/baseURL that is passed into axiosWithAuth()
-    axiosWithAuth()
-      .post(movie)
-      .then(() => {
-        const movieName = {
-          id: Date.now(),
-          name: movie.name,
-        };
-        const newMovie = [...this.state.movies, movieName];
-        this.setState({
-          movies: newMovie,
-        });
-        window.location.href = "/home";
-      })
-      .catch((error) => console.log(error));
-  };
-
-  updateMovie = (e, id, updatedMovie) => {
-    e.preventDefault();
-    const endpoint = `https://glitch.com/edit/#!/tops-movie-favs/users/${id}`;
-
-    axios
-      .put(endpoint, updatedMovie, {
-        headers: { Authorization: localStorage.getItem("token") },
-      })
-      .then((res) => {
-        console.log(res);
-        window.location.href = "/home";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  deleteMovie = (id) => {
-    const endpoint = `https://glitch.com/edit/#!/tops-movie-favs/users/${id}`;
-    axios
-      .delete(endpoint, {
-        headers: { Authorization: localStorage.getItem("token") },
-      })
-      .then((response) => {
-        const movie = response.data;
-        this.setState({ movie });
-        window.location.href = "/home";
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,

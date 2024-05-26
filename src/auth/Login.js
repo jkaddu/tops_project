@@ -37,6 +37,7 @@ const Login = () => {
       setUser("");
       setPwd("");
       setSuccess(true);
+      window.location.href = "/home";
     } catch (err) {
       if (!err?.response) {
         console.log("No server Reponse");
