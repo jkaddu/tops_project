@@ -41,12 +41,6 @@ class App extends React.Component {
       });
   }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
   render() {
     return (
       <div className="App">
@@ -54,33 +48,10 @@ class App extends React.Component {
           <Route exact path="/" component={Land} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route
-            path="/home"
-            render={(props) => (
-              <Home
-                {...props}
-                movies={this.state.movies}
-                delete={this.deleteMovie}
-              />
-            )}
-          />
-          <Route
-            path="/movie"
-            render={(props) => (
-              <AddMovies {...props} addMovie={this.addMovie} />
-            )}
-          />
-          <Route
-            path="/edit"
-            render={(props) => (
-              <Edit
-                {...props}
-                movies={this.state.movies}
-                updateMovie={this.updateMovie}
-                value={this.state.name}
-              />
-            )}
-          />
+
+          <Route path="/home" component={Home} />
+          <Route path="/movie" component={AddMovies} />
+          <Route path="/edit" component={Edit} />
         </Router>
       </div>
     );

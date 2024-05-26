@@ -27,7 +27,6 @@ const Login = () => {
 
     try {
       let data = JSON.stringify({ username: user, password: pwd });
-      console.log(data);
       const response = await axios.post(LOGIN_URL, data, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
@@ -35,11 +34,10 @@ const Login = () => {
       const accessToken = response?.data?.accessToken;
       setAuth({ username: user, password: pwd, accessToken });
       console.log(response);
-      console.log(response.data.accessToken);
       setUser("");
       setPwd("");
       setSuccess(true);
-      window.location.href = "/home";
+      // window.location.href = "/home";
     } catch (err) {
       if (!err?.response) {
         console.log("No server Reponse");
