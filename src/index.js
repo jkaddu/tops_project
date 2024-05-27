@@ -13,7 +13,7 @@ ReactDOM.render(
       <AuthProvider>
         <Routes>
           {/* Line 16 links App to root route("/"), can add route to it with the * in fornt of the "/ "*/}
-          <Route path="/*" element={<App />} />
+          <Route path="/*" Component={App} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
