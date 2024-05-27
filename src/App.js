@@ -16,13 +16,16 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" Component={Layout}>
+          {/* Public routed */}
           <Route path="/" Component={Land} />
           <Route path="login" Component={Login} />
           <Route path="register" Component={Register} />
-
-          <Route path="home" Component={Home} />
-          <Route path="movie" Component={AddMovies} />
-          <Route path="edit" Component={Edit} />
+          {/* Protected routes */}
+          <Route Component={RequireAuth}>
+            <Route path="home" Component={Home} />
+            <Route path="movie" Component={AddMovies} />
+            <Route path="edit" Component={Edit} />
+          </Route>
         </Route>
       </Routes>
     </div>
