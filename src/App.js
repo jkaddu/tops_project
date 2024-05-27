@@ -12,50 +12,20 @@ import Edit from "./components/Edit";
 import Land from "./components/Land";
 import RequireAuth from "./auth/RequireAuth";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [
-        {
-          id: 1,
-          name: "",
-        },
-      ],
-    };
-  }
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" component={Land} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
 
-  componentDidMount() {
-    const endpoint = "https://glitch.com/edit/#!/tops-movie-favs/users";
-    axios
-      .get(endpoint, {
-        headers: { authorization: localStorage.getItem("token") },
-      })
-      .then((res) => {
-        this.setState({
-          movies: res.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Routes>
-          <Route exact path="/" component={Land} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-
-          <Route path="/home" component={Home} />
-          <Route path="/movie" component={AddMovies} />
-          <Route path="/edit" component={Edit} />
-        </Routes>
-      </div>
-    );
-  }
+        <Route path="/home" component={Home} />
+        <Route path="/movie" component={AddMovies} />
+        <Route path="/edit" component={Edit} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
