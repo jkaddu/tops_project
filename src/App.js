@@ -10,7 +10,6 @@ import Home from "./components/Home";
 import AddMovies from "./components/AddMovies";
 import Edit from "./components/Edit";
 import Land from "./components/Land";
-// import PrivateRoute from "./components/PrivateRoute";
 
 class App extends React.Component {
   constructor() {
