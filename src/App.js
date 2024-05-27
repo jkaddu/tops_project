@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Login from "./auth/Login";
 import Register from "./auth/Register";
@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import AddMovies from "./components/AddMovies";
 import Edit from "./components/Edit";
 import Land from "./components/Land";
+import RequireAuth from "./auth/RequireAuth";
 
 class App extends React.Component {
   constructor() {
@@ -43,7 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Routes>
           <Route exact path="/" component={Land} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
@@ -51,7 +52,7 @@ class App extends React.Component {
           <Route path="/home" component={Home} />
           <Route path="/movie" component={AddMovies} />
           <Route path="/edit" component={Edit} />
-        </Router>
+        </Routes>
       </div>
     );
   }
