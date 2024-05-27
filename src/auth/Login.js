@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/use'Auth";
 import axios from "../api/axios";
 import "./auth.css";
@@ -6,6 +7,9 @@ const LOGIN_URL = "/auth";
 
 const Login = () => {
   const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/home";
   const userRef = useRef();
   const errRef = useRef();
 
@@ -36,8 +40,7 @@ const Login = () => {
       console.log(response);
       setUser("");
       setPwd("");
-      setSuccess(true);
-      // window.location.href = "/home";
+      navigate(from, { replace: true });
     } catch (err) {
       if (!err?.response) {
         console.log("No server Reponse");
