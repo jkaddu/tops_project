@@ -16,7 +16,6 @@ const Login = () => {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -81,64 +80,53 @@ const Login = () => {
           </button>
         </nav>
 
-        {success ? (
-          <section>
-            <h1>Success!</h1>
-            <p className="line">
-              <span>
-                <a href="/login">You Signed In</a>
-              </span>
-            </p>
-          </section>
-        ) : (
-          <div className="loginCard">
-            <p
-              ref={errRef}
-              className={errMsg ? "errmsg" : "offscreen"}
-              aria-live="assertive"
-            >
-              {errMsg}
-            </p>
-            <h2>TOPS</h2>
-            <form className="form" onSubmit={handleSubmit}>
-              <label htmlFor="username" className="logLabel">
-                Username:
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                ref={userRef}
-                autoComplete="username"
-                onChange={(e) => setUser(e.target.value)}
-                value={user}
-                required
-              />
-              <label htmlFor="password" className="logLabel">
-                Password:
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                autoComplete="password"
-                onChange={(e) => setPwd(e.target.value)}
-                value={pwd}
-                required
-              />
-              <button className="navBtn" type="submit">
-                LOGIN
-              </button>
-            </form>
-            <p className="line">
-              Don't have an account?
-              <br />
-              <span>
-                <a href="/register">Sign Up</a>
-              </span>
-            </p>
-          </div>
-        )}
+        <div className="loginCard">
+          <p
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
+          <h2>TOPS</h2>
+          <form className="form" onSubmit={handleSubmit}>
+            <label htmlFor="username" className="logLabel">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              ref={userRef}
+              autoComplete="username"
+              onChange={(e) => setUser(e.target.value)}
+              value={user}
+              required
+            />
+            <label htmlFor="password" className="logLabel">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autoComplete="password"
+              onChange={(e) => setPwd(e.target.value)}
+              value={pwd}
+              required
+            />
+            <button className="navBtn" type="submit">
+              LOGIN
+            </button>
+          </form>
+          <p className="line">
+            Don't have an account?
+            <br />
+            <span>
+              <a href="/register">Sign Up</a>
+            </span>
+          </p>
+        </div>
       </div>
     </>
   );
