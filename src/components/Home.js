@@ -9,6 +9,7 @@ import nights from "../images/Friday_night_lights_ver2.jpg";
 import happy from "../images/Happygilmoreposter.jpg";
 import gone from "../images/Gone_in_sixty_seconds.jpg";
 import avatar from "../images/Avatar_(2009_film)_poster.jpg";
+import useLogout from "../hooks/useLogout";
 
 const moviesData = [
   {
@@ -60,6 +61,12 @@ const moviesData = [
 
 const Home = () => {
   const movies = moviesData;
+  const logout = useLogout();
+
+  const signOut = async () => {
+    await logout();
+    window.location.href = "/login";
+  };
   return (
     <div className="home">
       <nav className="landNav">
@@ -78,8 +85,8 @@ const Home = () => {
           />
         </svg>
 
-        <button className="navBtn">
-          <a href="/login">Sign out</a>
+        <button className="navBtn" onClick={signOut}>
+          <a href="#">Sign out</a>
         </button>
       </nav>
 
