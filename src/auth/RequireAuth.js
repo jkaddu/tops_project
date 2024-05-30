@@ -4,8 +4,9 @@ import useAuth from "../hooks/useAuth";
 const RequireAuth = () => {
   const { auth } = useAuth();
   const location = useLocation();
+
   // This bit of code here makes sure a user is logged in and send them to the page requested
-  return auth?.username ? (
+  return auth?.accessToken ? (
     <Outlet />
   ) : (
     // If they aren't logged in they will be sent to the login page

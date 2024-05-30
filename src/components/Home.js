@@ -9,7 +9,6 @@ import nights from "../images/Friday_night_lights_ver2.jpg";
 import happy from "../images/Happygilmoreposter.jpg";
 import gone from "../images/Gone_in_sixty_seconds.jpg";
 import avatar from "../images/Avatar_(2009_film)_poster.jpg";
-import useRefreshToken from "../hooks/useRefreshToken";
 
 const moviesData = [
   {
@@ -61,7 +60,6 @@ const moviesData = [
 
 const Home = () => {
   const movies = moviesData;
-  const refresh = useRefreshToken();
   return (
     <div className="home">
       <nav className="landNav">
@@ -86,7 +84,6 @@ const Home = () => {
       </nav>
 
       <div className="homePage">
-        <button onClick={() => refresh()}>Refresh</button>
         <h2 className="title">Welcome to your DASHBOARD!</h2>
         <h3 className="title3">My Movies</h3>
         <div className="moviesCont">
