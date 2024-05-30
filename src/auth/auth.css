@@ -192,3 +192,14 @@ textarea {
 .create:hover {
   color: #228be6;
 }
+.persistCheck {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.7rem;
+  font-size: 1.5rem;
+}
+
+[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
