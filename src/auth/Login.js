@@ -18,6 +18,7 @@ const Login = () => {
   const [user, reset, attributeObj] = useInput("user", "");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [check, toggleCheck] = useToggle("persist", false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -135,8 +136,8 @@ const Login = () => {
               <input
                 type="checkbox"
                 id="persist"
-                onChange={togglePersist}
-                checked={persist}
+                onChange={toggleCheck}
+                checked={check}
               />
               <label htmlFor="persist">Trust This Device</label>
             </div>
