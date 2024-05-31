@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Form, FormGroup, Input, Navbar, Button } from "reactstrap";
+import { Col, Form, FormGroup, Input } from "reactstrap";
 
 class Edit extends React.Component {
   constructor() {

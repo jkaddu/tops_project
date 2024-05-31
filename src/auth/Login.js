@@ -38,6 +38,7 @@ const Login = () => {
       const accessToken = response?.data?.accessToken;
       setAuth({ username: user, password: pwd, accessToken });
       console.log(response);
+      console.log("persist", persist);
       setUser("");
       setPwd("");
       navigate(from, { replace: true });
