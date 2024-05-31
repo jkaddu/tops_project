@@ -38,6 +38,7 @@ const Login = () => {
         withCredentials: true,
       });
       const accessToken = response?.data?.accessToken;
+      // Don't need to store password in setAuth, security risk
       setAuth({ username: user, password: pwd, accessToken });
       console.log(response);
       console.log("persist", persist);
