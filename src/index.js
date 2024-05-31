@@ -6,6 +6,11 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+
+if (process.env.NODE_ENV === "production") {
+  disableReactDevTools();
+}
 
 ReactDOM.render(
   <React.StrictMode>
