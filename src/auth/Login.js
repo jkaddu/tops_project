@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useLocalStorage from "../hooks/useLocalStorage";
+import useInput from "../hooks/useInput";
 import axios from "../api/axios";
 import "./auth.css";
 const LOGIN_URL = "/auth";
@@ -14,7 +15,7 @@ const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useLocalStorage("user", "");
+  const [user, reset, attributeObj] = useInput("user", "");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -39,7 +40,7 @@ const Login = () => {
       setAuth({ username: user, password: pwd, accessToken });
       console.log(response);
       console.log("persist", persist);
-      setUser("");
+      reset();
       setPwd("");
       navigate(from, { replace: true });
     } catch (err) {
@@ -109,8 +110,10 @@ const Login = () => {
               name="username"
               ref={userRef}
               autoComplete="username"
-              onChange={(e) => setUser(e.target.value)}
-              value={user}
+              {...attributeObj}
+              // the attributeObj has the onChange fn and value attribute in the useInput file. Used the spread operator to utilize them here
+              // onChange={(e) => setUser(e.target.value)}
+              // value={user}
               required
             />
             <label htmlFor="password" className="logLabel">
