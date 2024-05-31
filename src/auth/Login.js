@@ -8,7 +8,7 @@ import "./auth.css";
 const LOGIN_URL = "/auth";
 
 const Login = () => {
-  const { setAuth, persist, setPersist } = useAuth();
+  const { setAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/home";
@@ -59,14 +59,6 @@ const Login = () => {
       console.log(err.stack);
     }
   };
-
-  const togglePersist = () => {
-    setPersist((prev) => !prev);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("persist", persist);
-  }, [persist]);
 
   return (
     <>
