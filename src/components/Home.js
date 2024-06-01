@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Button } from "reactstrap";
 import topGun from "../images/Top_Gun_Maverick_Poster.jpg";
 import tday from "../images/Training_Day_Poster.jpg";
@@ -11,62 +11,66 @@ import gone from "../images/Gone_in_sixty_seconds.jpg";
 import avatar from "../images/Avatar_(2009_film)_poster.jpg";
 import useLogout from "../hooks/useLogout";
 
-const moviesData = [
-  {
-    name: "Top Gun",
-    image: topGun,
-    id: 1,
-  },
-  {
-    name: "Scary Movie",
-    image: scary,
-    id: 2,
-  },
-  {
-    name: "Avatar",
-    image: avatar,
-    id: 3,
-  },
-  {
-    name: "Longest Yard",
-    image: long,
-    id: 4,
-  },
-  {
-    name: "Training Day",
-    image: tday,
-    id: 5,
-  },
-  {
-    name: "Remeber the Titans",
-    image: titans,
-    id: 6,
-  },
-  {
-    name: "Fiday Night Lights",
-    image: nights,
-    id: 7,
-  },
-  {
-    name: "Happy Gilmore",
-    image: happy,
-    id: 8,
-  },
-  {
-    name: "Gone in 60 seconds",
-    image: gone,
-    id: 9,
-  },
-];
-
 const Home = () => {
-  const movies = moviesData;
+  const [movies, setMovies] = useState([
+    {
+      name: "Top Gun",
+      image: topGun,
+      id: 1,
+    },
+    {
+      name: "Scary Movie",
+      image: scary,
+      id: 2,
+    },
+    {
+      name: "Avatar",
+      image: avatar,
+      id: 3,
+    },
+    {
+      name: "Longest Yard",
+      image: long,
+      id: 4,
+    },
+    {
+      name: "Training Day",
+      image: tday,
+      id: 5,
+    },
+    {
+      name: "Remeber the Titans",
+      image: titans,
+      id: 6,
+    },
+    {
+      name: "Fiday Night Lights",
+      image: nights,
+      id: 7,
+    },
+    {
+      name: "Happy Gilmore",
+      image: happy,
+      id: 8,
+    },
+    {
+      name: "Gone in 60 seconds",
+      image: gone,
+      id: 9,
+    },
+  ]);
   const logout = useLogout();
+
+  function handleDelete(id) {
+    const movieList = movies.filter((movie) => movie.id !== id);
+    setMovies(movieList);
+  }
 
   const signOut = async () => {
     await logout();
     window.location.href = "/login";
   };
+
   return (
     <div className="home">
       <nav className="landNav">
@@ -93,20 +97,25 @@ const Home = () => {
       <div className="homePage">
         <h2 className="title">Welcome to your DASHBOARD!</h2>
         <h3 className="title3">My Movies</h3>
-        <div className="moviesCont">
-          {movies.map((movie) => (
-            <MovieCard movieObj={movie} key={movie.name} />
-          ))}
-        </div>
+        {movies.length ? (
+          <div className="moviesCont">
+            {movies.map((movie) => (
+              <MovieCard
+                movieObj={movie}
+                handleDelete={handleDelete}
+                key={movie.name}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="noMovies">No movies to display</p>
+        )}
       </div>
     </div>
   );
 };
 
-function MovieCard({ movieObj }) {
-  function handleDelete() {
-    console.log("Deleted");
-  }
+function MovieCard({ movieObj, handleDelete }) {
   return (
     <div className="movie-card">
       <h3>{movieObj.name}</h3>
@@ -116,7 +125,11 @@ function MovieCard({ movieObj }) {
         <Button color="primary" className="hmbtn" href={`/edit/${movieObj.id}`}>
           Edit
         </Button>
-        <Button color="danger" className="hmbtn" onClick={handleDelete}>
+        <Button
+          color="danger"
+          className="hmbtn"
+          onClick={() => handleDelete(movieObj.id)}
+        >
           Delete
         </Button>
       </p>
