@@ -94,7 +94,7 @@ const Home = () => {
         </button>
       </nav>
 
-      <div className="homePage">
+      <div className={movies.length <= 3 ? "home2" : "home"}>
         <h2 className="title">Welcome to your DASHBOARD!</h2>
         <h3 className="title3">My Movies</h3>
         {movies.length ? (
