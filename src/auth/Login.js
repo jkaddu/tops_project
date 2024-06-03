@@ -47,13 +47,13 @@ const Login = () => {
       navigate(from, { replace: true });
     } catch (err) {
       if (!err?.response) {
-        setErrMsg("No server Reponse");
+        setErrMsg("No Server Reponse");
       } else if (err.response?.status === 400) {
-        setErrMsg("Missing username or password");
+        setErrMsg("Missing Username or Password");
       } else if ((err.response.status = 403)) {
         setErrMsg("Uanthoized");
       } else {
-        setErrMsg("Login failed");
+        setErrMsg("Login Failed");
       }
 
       console.log(err.message);
