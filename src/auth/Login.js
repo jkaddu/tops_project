@@ -4,6 +4,7 @@ import useAuth from "../hooks/useAuth";
 import useInput from "../hooks/useInput";
 import useToggle from "../hooks/useToggle";
 import axios from "../api/axios";
+import Message from "./Message";
 import "./auth.css";
 const LOGIN_URL = "/auth";
 
@@ -84,7 +85,7 @@ const Login = () => {
             <a href="/register">Sign up</a>
           </button>
         </nav>
-
+        <Message message="Exit this message if you were able to register." />
         <div className="loginCard">
           <p
             ref={errRef}

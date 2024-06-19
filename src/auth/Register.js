@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import axios from "../api/axios";
+import Message from "./Message";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -23,6 +24,7 @@ const Register = () => {
 
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
+  const [showAlert, setShowAlert] = useState(true);
 
   useEffect(() => {
     userRef.current.focus();
@@ -106,6 +108,7 @@ const Register = () => {
             <a href="/login">Login</a>
           </button>
         </nav>
+        <Message message="Backend hosted by Render. Give it a minute to get going" />
         {success ? (
           <section>
             <h1>Success!</h1>
